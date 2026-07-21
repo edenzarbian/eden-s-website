@@ -1,15 +1,13 @@
 import React from 'react';
 
-// 1. Define the data structure for your experience
 interface ExperienceCardProps {
   role: string;
   organization: string;
   years: string;
   description: string;
-  githubUrl?: string; // Optional, in case a role doesn't have a related link
+  githubUrl?: string;
 }
 
-// 2. The Polished Component
 export default function ExperienceCard({
   role,
   organization,
@@ -31,7 +29,6 @@ export default function ExperienceCard({
 
       <p className="text-gray-700 mt-4 leading-relaxed">{description}</p>
 
-      {/* Conditionally render the GitHub link securely if it exists */}
       {githubUrl && (
         <div className="mt-6">
           <a
@@ -40,7 +37,7 @@ export default function ExperienceCard({
             rel="noopener noreferrer"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline font-medium"
           >
-            View My GitHub Profile &rarr;
+            View Code on GitHub &rarr;
           </a>
         </div>
       )}
@@ -48,7 +45,7 @@ export default function ExperienceCard({
   );
 }
 
-// 3. How to use it in your page with your actual CV data
+// Notice we removed the githubUrl prop from the NOC Operations card!
 export function MyExperienceSection() {
   return (
     <ExperienceCard
@@ -56,7 +53,6 @@ export function MyExperienceSection() {
       organization="IDF, Division 91"
       years="2022 – 2023"
       description="Monitored mission-critical servers, communication systems, and classified operational technologies. Performed real-time monitoring, incident detection, and rapid response to system failures."
-      githubUrl="https://github.com/edenzarbian"
     />
   );
 }
