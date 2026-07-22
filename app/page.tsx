@@ -1,6 +1,7 @@
 'use client';
 import MyTechStack from './components/MyTechStack';
 import { MyExperienceSection } from './components/ExperienceCard';
+import Chatbot from './components/Chatbot';
 import ITExpertise from './components/ITExpertise';
 
 export default function Home() {
@@ -45,6 +46,7 @@ export default function Home() {
       <MyTechStack />
       <ITExpertise />
       <MyExperienceSection />
+      <Chatbot />
     </main>
   );
 }
